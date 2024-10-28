@@ -31,10 +31,21 @@ namespace Program
 
             parentNode2.AddChildren(childNode3);
             parentNode2.AddChildren(childNode4);
+                      
+            var sumarEdades = new AgeSum();
+            root.Accept(sumarEdades);
             
+            Console.WriteLine("La suma de las edades de la familia es: " + sumarEdades.SumaTotal);
             
-            // visitar el árbol aquí
-            
+            // Visitor para encontrar la edad del hijo más grande
+            var hijoMasViejo = new HijoMasViejo();
+            root.Accept(hijoMasViejo);
+            Console.WriteLine("La edad del hijo más grande es: " + hijoMasViejo.EdadMasViejo);
+
+            // Visitor para encontrar el nombre más largo
+            var nombreMasLargo = new NombreMasLargo();
+            root.Accept(nombreMasLargo);
+            Console.WriteLine("El nombre más largo es: " + nombreMasLargo.NombreLargo);
         }
     }
 }
