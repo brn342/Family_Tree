@@ -23,15 +23,15 @@ namespace Program
             Node<Person> childNode3 = new Node<Person>(child3);
             Node<Person> childNode4 = new Node<Person>(child4);
 
-            n1.AddChildren(n2);
-            n1.AddChildren(n3);
+            root.AddChildren(parentNode1);
+            root.AddChildren(parentNode2);
 
-            n2.AddChildren(n4);
-            n2.AddChildren(n5);
+            parentNode1.AddChildren(childNode1);
+            parentNode1.AddChildren(childNode2);
 
-            n3.AddChildren(n6);
-            n3.AddChildren(n7);
-
+            parentNode2.AddChildren(childNode3);
+            parentNode2.AddChildren(childNode4);
+                      
             var sumarEdades = new AgeSum();
             root.Accept(sumarEdades);
             
@@ -46,7 +46,6 @@ namespace Program
             var nombreMasLargo = new NombreMasLargo();
             root.Accept(nombreMasLargo);
             Console.WriteLine("El nombre más largo es: " + nombreMasLargo.NombreLargo);
-        }
         }
     }
 }
