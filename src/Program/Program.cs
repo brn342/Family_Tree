@@ -32,8 +32,10 @@ namespace Program
             n3.AddChildren(n6);
             n3.AddChildren(n7);
 
-            // visitar el árbol aquí
+            var sumarEdades = new AgeSum();
+            root.Accept(sumarEdades);
             
+            Console.WriteLine("La suma de las edades de la familia es: " + sumarEdades.SumaTotal);
         }
     }
 }
